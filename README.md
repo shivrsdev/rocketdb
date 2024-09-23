@@ -1,7 +1,8 @@
 # RocketDB
 A rocket fast, light-weight, in-memory cache (similar to Redis) build with lua for blazingly fast results,
-this cache database still doesn't have any authorization meaning you shouldn't use this database at the moment in production, but this feature will be added later on, so it's fine to use this in development.
 The cache uses creationix/weblit for making a rest API, this rest API makes the software accessible to all languages as it uses http based requests which all languages use.
+
+> ### Update, authentication with keys has just been added!
 
 # Installation
 First install (Luvit)[https://luvit.io/install.html] into the project folder like this,
@@ -17,13 +18,15 @@ Then run the next command to install all the dependencies (for powershell and li
 ```
 ./lit install
 ```
+Then change ```src/config.lua``` to include any sort of **secure** key that you want, there is a default example key in there, but it is suggested you do **not** use it for production.
 Finally, run the server:
 ```
 ./luvit src/main
 ```
 
 # Usage
-There are no libraries for RocketDB at the moment but here is how to use the cache with requests:
+There are no libraries for RocketDB at the moment but here is how to send requests to operate RocketDB.
+
 To get a value send a request of the sort:
 ```
 GET /api/myvariable
@@ -44,3 +47,14 @@ The payload (request body) should look like this:
     "value": "Hello space!"
 }
 ```
+You can also update/create a table as you can send any JSON in "value" and it will be stored, here is an example:
+```json
+{
+    "value": {
+        "name": "Bobby JR",
+        "age": 23,
+        "altitude": "SPACE!"
+    }
+}
+```
+Yes, this is how easy RocketDB is!
