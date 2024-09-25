@@ -5,7 +5,7 @@ The cache uses creationix/weblit for making a rest API, this rest API makes the 
 > ### Update, authentication with keys has just been added!
 
 # Installation
-First install (Luvit)[https://luvit.io/install.html] into the project folder like this,
+First install [Luvit](https://luvit.io/install.html) into the project folder like this,
 for windows (SPECIFICALLY POWERSHELL) use:
 ```
 PowerShell -NoProfile -ExecutionPolicy unrestricted -Command "[Net.ServicePointManager]::SecurityProtocol = 'Tls12'; iex ((new-object net.webclient).DownloadString('https://github.com/luvit/lit/raw/master/get-lit.ps1'))"
